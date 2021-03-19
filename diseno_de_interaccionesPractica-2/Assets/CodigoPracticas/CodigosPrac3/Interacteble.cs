@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine;
 
+
+    
 public class Interacteble : MonoBehaviour
 {
     //variables para dar al color a la pelota , si me acerco o me alejo
@@ -11,25 +14,34 @@ public class Interacteble : MonoBehaviour
 
     //variable para dar false o true , cuando se acerca o se aleja
     public bool isInsideZone = false;
-
+    
     //Variable , cuando das tecla "P" golpea la pelota
-    public KeyCode interactionKey = KeyCode.P;
-     
+    // KeyCode interactionKey = KeyCode.P;
 
+    public string interactionButton = "Interact";
+    
+    public GameObject Textocult;
+    public GameObject imageOcult;
+    
 
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
     /// </summary>
     public virtual void Update()
     {
-        if (isInsideZone && Input.GetKeyDown(interactionKey))
+      //if (isInsideZone && Input.GetKeyDown(interactionKey))
+      if(isInsideZone && CrossPlatformInputManager.GetButtonDown(interactionButton))
         {
             Interact();
+            //Oculta la imagen y el texto de cuando recogemos un item
+            Textocult.gameObject.SetActive(false);
+            imageOcult.gameObject.SetActive(false);
         }
+         
     }
 
 
-    /////////Cuando entra al espacio de la pelota////////////////
+    ///////Cuando entra al espacio de la pelota////////////////
     /// <summary>
     /// OnTriggerEnter is called when the Collider other enters the trigger.
     /// </summary>
@@ -48,6 +60,11 @@ public class Interacteble : MonoBehaviour
 
         Debug.Log("Entró en el área");
         isInsideZone = true;
+        
+        //Oculta la imagen y el texto de cuando nos alejamos del objeto a recoger
+        Textocult.gameObject.SetActive(true);
+        imageOcult.gameObject.SetActive(true);
+         
     }
 
     //////////////Caso contrario cuando estoy fuera////////////////////
@@ -68,6 +85,11 @@ public class Interacteble : MonoBehaviour
 
         Debug.Log("Salió en el área");
         isInsideZone = false;
+        
+        //aparece la imagen y el texto de cuando nos acercamos al objeto a recoger
+        Textocult.gameObject.SetActive(false);
+        imageOcult.gameObject.SetActive(false);
+        
     }
 
      public virtual void Interact()

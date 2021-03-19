@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine;
+
 
 public class InventoryUI : MonoBehaviour
 {
 
     private Inventory _inventory;
     public GameObject panel;
+    
+    public string interactionInvent = "UpdateUI";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +22,13 @@ public class InventoryUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if( Input.GetKeyDown(KeyCode.I))
+        // if( Input.GetKeyDown(KeyCode.I))
+        // {
+        //     panel.SetActive(!panel.activeSelf);
+        //     UpdateUI();
+        // }
+
+        if( CrossPlatformInputManager.GetButtonDown(interactionInvent))
         {
             panel.SetActive(!panel.activeSelf);
             UpdateUI();

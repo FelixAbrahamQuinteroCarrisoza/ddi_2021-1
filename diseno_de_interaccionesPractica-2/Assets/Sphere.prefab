@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 4160612191575104932}
   - component: {fileID: 4160612191575104933}
   - component: {fileID: 4160612191575104934}
+  - component: {fileID: 939056927}
+  - component: {fileID: 939056920}
+  - component: {fileID: 1422671366}
+  - component: {fileID: 1422671364}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -93,3 +97,70 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &939056927
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4160612191575104936}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &939056920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4160612191575104936}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c12feeb08db13e4fb8079cda3d2f311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlejarColor: {r: 0, g: 0, b: 0, a: 0}
+  AcercarColor: {r: 0.9662561, g: 0.9716981, b: 0.068752214, a: 0}
+  isInsideZone: 1
+  interactionButton: Interact
+  Textocult: {fileID: 0}
+  imageOcult: {fileID: 0}
+  direction: {x: 0, y: 10, z: 20}
+  torque: {x: 0, y: 0, z: 0}
+  speed: 100
+  magnusScale: 0.1
+--- !u!135 &1422671366
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4160612191575104936}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1422671364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4160612191575104936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3ed68a7ab455449b6d00380def80dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlejarColor: {r: 0, g: 0, b: 0, a: 0}
+  AcercarColor: {r: 0.98929596, g: 1, b: 0, a: 0}
+  isInsideZone: 0
+  interactionButton: Interact
+  Textocult: {fileID: 0}
+  imageOcult: {fileID: 0}
+  item: {fileID: 11400000, guid: fa57cf676abd8bf408dc53aa19a62efa, type: 2}

@@ -11,6 +11,11 @@ public class Pelota : Interacteble
     private Rigidbody rb;
     private float intensity;
 
+    //para ocultar el boton de interact el texto
+    private GameObject Textocult;
+    private GameObject mageOcult;
+    
+
     // Start is called before the first frame update
     void Start()
     {
